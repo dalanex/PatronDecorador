@@ -24,9 +24,15 @@ namespace Decorador_añadiendo_tipos
         {
             string detalles;
             obtenerDetalles();
-            if (peso >= 0 && peso <= 100) { envio = new Carta(direccionDestino, direccionOrigen, cpDestino, cpOrigen, peso);
-            } else if (peso > 100 && peso <= 2000) { envio = new Paquete(direccionDestino, direccionOrigen, cpDestino, cpOrigen, peso);
-            } else { envio = new GranVolumen(direccionDestino, direccionOrigen, cpDestino, cpOrigen, peso); }
+            if (peso >= 0 && peso <= 100)
+            {
+                envio = new Carta(direccionDestino, direccionOrigen, cpDestino, cpOrigen, peso);
+            }
+            else if (peso > 100 && peso <= 2000)
+            {
+                envio = new Paquete(direccionDestino, direccionOrigen, cpDestino, cpOrigen, peso);
+            }
+            else { envio = new GranVolumen(direccionDestino, direccionOrigen, cpDestino, cpOrigen, peso); }
             detalles = envio.enviar();
             Console.WriteLine(detalles);
             Console.WriteLine("-- Final price: " + envio.conseguirCoste());
